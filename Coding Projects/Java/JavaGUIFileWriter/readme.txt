@@ -1,0 +1,1 @@
+To run program, copy JavaGUIFileWriter into IntelliJ IDEA's IdeaProjects folder, open the project in IDEA, navigate to JavaGUI class file, and run.

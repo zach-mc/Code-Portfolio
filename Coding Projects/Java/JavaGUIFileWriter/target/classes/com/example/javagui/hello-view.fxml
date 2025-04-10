@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml"
+          fx:controller="com.example.javagui.Controller" vgap="6" hgap="5" alignment="CENTER">
+  <padding>
+    <Insets top="1.0" bottom="12.0" left="5.0" right="3.0"/>
+  </padding>
+
+  <fx:define>
+    <ToggleGroup fx:id="radio"/>
+  </fx:define>
+
+  <!--Left side-->
+  <Label text="Name" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+
+  <Label text="Street" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+
+  <Label text="City" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+
+  <Label text="State" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+
+  <Label text="Zip" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+
+  <Label text="Choose One" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+
+  <Label text="Type of Music" GridPane.rowIndex="6" GridPane.columnIndex="0" fx:id="musicTypeLabel"/>
+
+  <Label text="Type of App" GridPane.rowIndex="7" GridPane.columnIndex="0" fx:id="appTypeLabel"/>
+
+  <Label text="Enter Title" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+
+  <Label text="Date Purchased" GridPane.rowIndex="9" GridPane.columnIndex="0"/>
+
+  <Label text="Account Number" GridPane.rowIndex="10" GridPane.columnIndex="0"/>
+
+  <Button text="SUBMIT" GridPane.rowIndex="11" GridPane.columnIndex="0" prefWidth="390" prefHeight="20"
+          fx:id="submitButton" onAction="#onSubmitClick" style="-fx-background-radius: 20;" alignment="CENTER"
+          GridPane.hgrow="ALWAYS" maxWidth="Infinity">
+    <padding>
+      <Insets top="2" bottom="2"/>
+    </padding>
+  </Button>
+
+
+  <!--Right side-->
+  <TextField GridPane.rowIndex="0" GridPane.columnIndex="1"  fx:id="nameField" GridPane.hgrow="ALWAYS"
+             maxWidth="Infinity"/>
+
+  <TextField GridPane.rowIndex="1" GridPane.columnIndex="1"  fx:id="streetField"/>
+
+  <TextField GridPane.rowIndex="2" GridPane.columnIndex="1"  fx:id="cityField"/>
+
+  <TextField GridPane.rowIndex="3" GridPane.columnIndex="1"  fx:id="stateField"/>
+
+  <TextField GridPane.rowIndex="4" GridPane.columnIndex="1"  fx:id="zipField"/>
+
+  <HBox GridPane.rowIndex="5" GridPane.columnIndex="1" prefHeight="30" alignment="CENTER_LEFT">
+    <CheckBox text="APP"  fx:id="appBox" prefWidth="195" onAction="#handleCheckBoxes"/>
+
+    <CheckBox text="MUSIC" fx:id="musicBox" onAction="#handleCheckBoxes"/>
+  </HBox>
+
+  <ComboBox promptText="CHOOSE ONE" GridPane.rowIndex="6" GridPane.columnIndex="1"
+            prefWidth="390" fx:id="musicCombo" visibleRowCount="3" GridPane.hgrow="ALWAYS" maxWidth="Infinity">
+    <items>
+      <FXCollections fx:factory="observableArrayList">
+        <String fx:value="CHOOSE ONE" fx:id="comboChoose"/>
+        <String fx:value="Alternative" fx:id="comboAlt"/>
+        <String fx:value="Classical" fx:id="comboClassical"/>
+      </FXCollections>
+    </items>
+  </ComboBox>
+
+  <HBox GridPane.rowIndex="7" GridPane.columnIndex="1" prefWidth="390" prefHeight="30" alignment="CENTER_LEFT"
+        GridPane.hgrow="ALWAYS" maxWidth="Infinity">
+    <RadioButton text="GAME"
+                 prefWidth="120" toggleGroup="$radio" fx:id="gameRadio"/>
+
+    <RadioButton text="PRODUCTIVITY"
+                 prefWidth="120" toggleGroup="$radio" fx:id="prodRadio"/>
+
+    <RadioButton text="EDUCATION"
+                 prefWidth="110" toggleGroup="$radio" fx:id="eduRadio"/>
+  </HBox>
+
+  <TextField GridPane.rowIndex="8" GridPane.columnIndex="1" fx:id="titleField"/>
+
+  <TextField GridPane.rowIndex="9" GridPane.columnIndex="1" fx:id="dateField"/>
+
+  <TextField GridPane.rowIndex="10" GridPane.columnIndex="1" fx:id="accField"/>
+
+  <Button text="FINISH" GridPane.rowIndex="11" GridPane.columnIndex="1" prefWidth="390" prefHeight="20"
+          cancelButton="true" onAction="#onFinishClick" style="-fx-background-radius: 20" fx:id="finishButton"
+          alignment="CENTER" GridPane.hgrow="ALWAYS" maxWidth="Infinity">
+    <padding>
+      <Insets top="2" bottom="2"/>
+    </padding>
+  </Button>
+
+</GridPane>
